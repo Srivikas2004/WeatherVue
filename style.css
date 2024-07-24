@@ -1,0 +1,288 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+   
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+}
+.bodycontainer {
+ 
+    height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+h1 {
+    background: #0e5490;
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    padding: 18px 0;
+    color: #fff;
+  }
+.container {
+  max-width: 900px;
+  width: 100%;
+  background-color: #2b2e4a;
+  color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 1rem;
+}
+
+.img_section {
+  border-radius: 25px;
+  background-image: url("images/anime-style-clouds.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+ 
+  transform: scale(1.03) perspective(200px);
+}
+
+.img_section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #090101 10%, #16213e 100%);
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: 25px;
+}
+
+.default_info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.default_info img {
+  width: 80%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.default_info h1 {
+  font-size: 3rem;
+  font-family: "Ruda", sans-serif;
+  margin-bottom: 1rem;
+  color: #095482;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.default_info h2 {
+  font-size: 2rem;
+}
+
+.default_info h3 {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+
+.weather_temp {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+.content_section {
+
+  padding:5rem;
+}
+
+.content_section form {
+  margin: 1.5rem 1rem;
+  position: relative;
+}
+
+.content_section form input {
+  width: 84%;
+  outline: none;
+  margin-bottom: 0.1rem;
+  background: transparent;
+  border: 1px solid #4a4a4a;
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  font-family: inherit;
+  color: #fff;
+  font-size: 1rem;
+
+}
+
+.content_section form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 1rem 0.7rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  outline: none;
+  border: none;
+  background: #084f9b;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.day_info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Adjust the gap between the cards as needed */
+  }
+  
+  .content {
+    flex: 1 1 calc(50% - 16px); /* Two cards per row */
+    box-sizing: border-box;
+    /* border: 1px solid #5d5d5d; */
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(39, 39, 39, 0.1);
+    background-color: #04325b;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .content:hover {
+    background-color: #fff;
+    color: black;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  }
+
+.day_info .content .title {
+  font-weight: 600;
+}
+
+.list_content ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 3rem 5rem;
+  padding: 2rem;
+  background: #2b2e4a;
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.list_content ul li {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in;
+}
+
+.list_content ul li:hover {
+  transform: scale(1.1);
+  background-color: #fff;
+  color: #2b2e4a;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.list_content ul li img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.icons {
+  opacity: 0;
+}
+
+.icons.fadeIn {
+  animation: 0.5s fadeIn forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeIn {
+  to {
+    transition: all 0.5s ease-in;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+    .app_title{
+        display: none;
+    }
+    .wrapper {
+      grid-template-columns: 1fr;
+    }
+  
+    .content_section {
+      padding: 2rem;
+    }
+  
+    .default_info h1 {
+      font-size: 2.5rem;
+    }
+  
+    .default_info h2 {
+      font-size: 1.5rem;
+    }
+  
+    .default_info h3 {
+      font-size: 1rem;
+    }
+  
+    .day_info {
+      gap: 12px;
+    }
+  
+    .content {
+      flex: 1 1 calc(100% - 12px); /* One card per row on small screens */
+      padding: 12px;
+    }
+  
+    .list_content ul {
+      margin: 2rem 1rem;
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .app_title{
+        display: none;
+    }
+    .default_info h1 {
+      font-size: 2rem;
+    }
+  
+    .default_info h2 {
+      font-size: 1.2rem;
+    }
+  
+    .default_info h3 {
+      font-size: 0.9rem;
+    }
+  
+    .content_section form input {
+      width: 70%;
+    }
+  
+    .content_section form button {
+      padding: 0.7rem 0.5rem;
+    }
+  
+    .list_content ul {
+      margin: 1rem 0.5rem;
+      padding: 0.5rem;
+    }
+  }
